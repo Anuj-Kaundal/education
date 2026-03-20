@@ -2,6 +2,8 @@ import React from 'react'
 import { CiSearch } from "react-icons/ci";
 import Slider from "react-slick";
 import { GiStarShuriken } from "react-icons/gi";
+import { GiAchievement } from "react-icons/gi";
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 function Home() {
 
     const settings = {
@@ -124,6 +126,97 @@ function Home() {
                 </div>
             </div>
             {/* Our Programs section end */}
+            {/* Top Mentors */}
+            <div className='space-y-5'>
+                <div className='flex justify-center pt-5'>
+                    <button className='flex items-center gap-2 text-sm font-medium justify-center text-white bg-[#3746F2] rounded-full py-1 px-4 '>
+                        <GiStarShuriken />Top Mentors
+                    </button>
+                </div>
+                <h1 className='text-2xl font-bold text-center'>Learn from Industry Experts</h1>
+                <p className='text-lg text-center'>Choose from our most popular internship programs designed to give you real-<br className='hidden md:block lg:block' />world experience and industry exposure.</p>
+
+                <div className='flex flex-wrap gap-5 justify-center '>
+                    <div className='border border-[#00000033] space-y-3 rounded-2xl'>
+                        <img src="/sarah.svg" alt="" />
+                        <h1 className='text-2xl font-semibold pl-3'>Sarah Johnson</h1>
+                        <p className='text-base text-[#00000080] pl-3'>Senior Full Stack Developer</p>
+                        <span className='text-sm text-[#3746F2] flex items-center pl-3 pb-5'><GiAchievement />12 Years Experience</span>
+                    </div>
+                    <div className='border border-[#00000033] space-y-3 rounded-2xl'>
+                        <img src="/michael.svg" alt="" />
+                        <h1 className='text-2xl font-semibold pl-3'>Michael Chen</h1>
+                        <p className='text-base text-[#00000080] pl-3'>Lead UX Designer</p>
+                        <span className='text-sm text-[#3746F2] flex items-center pl-3 pb-5'><GiAchievement />10 Years Experience</span>
+                    </div>
+                    <div className='border border-[#00000033] space-y-3 rounded-2xl'>
+                        <img src="/priya.svg" alt="" />
+                        <h1 className='text-2xl font-semibold pl-3'>Priya Sharma</h1>
+                        <p className='text-base text-[#00000080] pl-3'>Data Science Lead</p>
+                        <span className='text-sm text-[#3746F2] flex items-center pl-3 pb-5'><GiAchievement />15 Years Experience</span>
+                    </div>
+                </div>
+            </div>
+            {/* Top Mentors section ends */}
+            {/* Offline Training */}
+            <div>
+                <div className='flex justify-center pt-5'>
+                    <button className='flex items-center gap-2 text-sm font-medium justify-center text-white bg-[#3746F2] rounded-full py-1 px-4 '>
+                        <GiStarShuriken />Offline Training
+                    </button>
+                </div>
+                <div className='flex justify-between gap-10'>
+                    <div>
+                        <img src="/offlinetraing.svg" alt="" />
+                    </div>
+                    <div className='space-y-3'>
+                        <h1 className='text-3xl font-bold'>Learn Offline at Our Training Center</h1>
+                        <p>Experience hands-on learning in our state-of-the-art training facility<br className='hidden md:block lg:block' />with expert guidance and collaborative environment.</p>
+                        <ul>
+                            <li className='flex items-center gap-3'><IoMdCheckmarkCircleOutline className='text-[#00A63E]' />Live classroom sessions</li>
+                            <li className='flex items-center gap-3'><IoMdCheckmarkCircleOutline className='text-[#00A63E]' />Doubt solving support</li>
+                            <li className='flex items-center gap-3'><IoMdCheckmarkCircleOutline className='text-[#00A63E]' />Practical lab access</li>
+                            <li className='flex items-center gap-3'><IoMdCheckmarkCircleOutline className='text-[#00A63E]' />Placement assistance</li>
+                        </ul>
+                        <button className='bg-[#3746F2] text-white text-lg font-semibold py-2 px-5 rounded-sm'>Book a Visit</button>
+                    </div>
+                </div>
+            </div>
+            {/* Offline Training section ends */}
+            {/* why choose us section */}
+            <div className='bg-[#4554FF] text-white text-center p-10 space-y-5'>
+                <h1 className='text-3xl font-bold'>Why Choose Us</h1>
+                <p>We provide everything you need to launch your tech career successfully</p>
+                <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-10'>
+                    <div className='bg-[#6C77FF80] p-5 flex flex-col items-center space-y-3 rounded-2xl'>
+                        <img src="/mentors.svg" alt="" height={50} width={50} />
+                        <h1 className='text-2xl font-bold'>Industry Mentors</h1>
+                        <p>Learn from experts with 10+ years of experience in top  companies</p>
+                    </div>
+                    <div className='bg-[#6C77FF80] p-5 flex flex-col items-center space-y-3 rounded-2xl'>
+                        <img src="/projects.svg" alt="" height={50} width={50} />
+                        <h1 className='text-2xl font-bold'>Practical Projects</h1>
+                        <p>Build real-world projects to enhance your portfolio and skills</p>
+                    </div>
+                    <div className='bg-[#6C77FF80] p-5 flex flex-col items-center space-y-3 rounded-2xl'    >
+                        <img src="/certificate.svg" alt="" height={50} width={50} />
+                        <h1 className='text-2xl font-bold'>Internship Certificate</h1>
+                        <p>Get recognized certification after completing internship programs</p>
+                    </div>
+                    <div className='bg-[#6C77FF80] p-5 flex flex-col items-center space-y-3 rounded-2xl'>
+                        <img src="/support.svg" alt="" height={50} width={50} />
+                        <h1 className='text-2xl font-bold'>Placement Support</h1>
+                        <p>Dedicated career counseling and interview preparation assistance</p>
+                    </div>
+                </div>
+            </div>
+            {/* why choose us section end */}
+            {/* your career path */}
+            <div className='text-center'>
+                <h1 className='text-3xl font-bold'>Your Career Path</h1>
+                <p>A clear roadmap from learning to landing your dream job</p>
+            </div>
+            {/* your career path section end */}
         </div>
     );
 }
