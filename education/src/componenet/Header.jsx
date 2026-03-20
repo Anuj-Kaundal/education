@@ -4,7 +4,7 @@ import { MdOutlinePhoneInTalk } from "react-icons/md";
 import { FaRegClock } from "react-icons/fa";
 function Header() {
     return (
-        <div>
+        <div className='max-w-380 mx-auto'>
             {/* contact header */}
             <div className='flex justify-between items-center px-10 py-4 bg-[#DDE9FF]'>
                 <div className='flex gap-5 items-center'>
@@ -31,7 +31,7 @@ function Header() {
                     </ul>
                 </div>
                 <div className='flex gap-5'>
-                    <button className='text-[#3746F2]'>Login</button>
+                    <button className='text-[#3746F2] text-lg font-medium'>Login</button>
                     <button className='bg-[#3746F2] text-white py-2 px-4 rounded-md'>Register</button>
                 </div>
             </div>
