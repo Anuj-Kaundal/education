@@ -2,7 +2,9 @@ import React from 'react'
 import { MdOutlineMail } from "react-icons/md";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
 import { FaRegClock } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 function Header() {
+    const navigate = useNavigate();
     return (
         <div className='max-w-380 mx-auto'>
             {/* contact header */}
@@ -22,12 +24,12 @@ function Header() {
                 </div>
                 <div>
                     <ul className='flex justify-center items-center gap-10 text-base'>
-                        <li>Home</li>
-                        <li>Courses</li>
-                        <li>Internships</li>
-                        <li>Success Stories</li>
-                        <li>About</li>
-                        <li>Contact</li>
+                        <li className='cursor-pointer'>Home</li>
+                        <li className='cursor-pointer'>Courses</li>
+                        <li className='cursor-pointer'>Internships</li>
+                        <li className='cursor-pointer'>Success Stories</li>
+                        <li className='cursor-pointer' onClick={() => navigate('/about')}>About</li>
+                        <li className='cursor-pointer'>Contact</li>
                     </ul>
                 </div>
                 <div className='flex gap-5'>
