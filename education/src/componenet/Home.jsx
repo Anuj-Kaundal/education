@@ -4,8 +4,8 @@ import Slider from "react-slick";
 import { GiStarShuriken } from "react-icons/gi";
 import { GiAchievement } from "react-icons/gi";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import course from './course';
 function Home() {
-
     const settings = {
         // dots: false,
         infinite: true,
@@ -38,16 +38,19 @@ function Home() {
                     </p>
 
                     {/* search box */}
-                    <div className='flex items-center gap-5 border border-[#1F1F1F80] rounded-md w-fit px-5 py-2 mt-5'>
-                        <CiSearch className='text-2xl' />
-                        <span className='text-base text-[#1F1F1F80]'>
-                            What skill do you want to learn today?
-                        </span>
-                        <button className='bg-[#3746F2] text-white py-2 px-6 rounded-md'>
+                    <div className="flex items-center bg-white rounded-lg mt-6 overflow-hidden shadow-lg w-full max-w-xl">
+                        <CiSearch className="text-2xl text-gray-400 ml-3" />
+
+                        <input
+                            type="text"
+                            placeholder="What skill do you want to learn today?"
+                            className="flex-1 px-3 py-3 outline-none text-black"
+                        />
+
+                        <button className="bg-[#3746F2] text-white px-6 py-3 hover:bg-blue-700 transition">
                             Search
                         </button>
                     </div>
-
                     {/* stats */}
                     <div className='flex gap-10 pt-5'>
                         <div>
@@ -101,6 +104,47 @@ function Home() {
                 </div>
                 <h1 className='text-2xl font-bold text-center'>Start Your Internship Journey</h1>
                 <p className='text-lg text-center'>Choose from our most popular internship programs designed to give you real-<br className='hidden md:block lg:block' />world experience and industry exposure.</p>
+                <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4'>
+                    {
+                        course.slice(0, 6).map((item, index) => (
+                            <div
+                                key={item.id}
+                                className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300"
+                            >
+                                <img
+                                    src={item.image}
+                                    alt={item.title}
+                                    className="w-full h-[200px] object-cover"
+                                />
+
+                                <div className="p-5">
+                                    <span className="text-sm text-blue-600 font-semibold">
+                                        4 Months
+                                    </span>
+
+                                    <h2 className="text-xl font-bold mt-2">{item.title}</h2>
+
+                                    <p className="text-gray-500 mt-2 text-sm">
+                                        {item.description}
+                                    </p>
+
+                                    <div className="flex justify-between items-center mt-4">
+                                        <h1 className="text-lg font-semibold">
+                                            ₹19,999{" "}
+                                            <span className="text-red-500 line-through text-sm ml-2">
+                                                ₹39,999
+                                            </span>
+                                        </h1>
+
+                                        <button className="border border-[#4F5DFF] text-[#4F5DFF] font-semibold rounded-md px-4 py-2 hover:bg-[#4F5DFF] hover:text-white transition">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
             {/* internship section end */}
             {/* Our Programs */}

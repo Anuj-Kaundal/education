@@ -3,6 +3,10 @@ import {createBrowserRouter,RouterProvider,} from "react-router-dom";
 import Home from "./componenet/Home";
 import Applayout from "./componenet/Applayout";
 import About from "./componenet/About";
+import Courses from "./componenet/Courses";
+import Internships from "./componenet/Internships";
+import Contact from "./componenet/Contact";
+import Register from "./componenet/Register";
 
 const appRouter = createBrowserRouter([
   {
@@ -16,6 +20,22 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />
+      },
+      {
+        path: "/course",
+        element:<Courses />
+      },
+      {
+        path:"/internship",
+        element:<Internships/>
+      },
+      {
+        path:"/contact",
+        element:<Contact/>
+      },
+      {
+        path:"/register",
+        element:<Register/>
       }
     ],
   },
