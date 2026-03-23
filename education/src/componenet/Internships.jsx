@@ -3,7 +3,7 @@ import { CiSearch } from "react-icons/ci";
 import Internship from "./internship";
 function Internships() {
     return (
-        <div>
+        <div className='max-w-380 mx-auto'>
             <div>
                 <div className='bg-black'>
                     <img src="/internship-bg.svg" alt="" className='opacity-50 w-full object-cover relative' />
@@ -28,7 +28,7 @@ function Internships() {
                 </div>
             </div>
             {/* internships */}
-            <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5'>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 px-10 lg:px-20 py-3'>
                 {
                     Internship.map((item) => (
                         <>

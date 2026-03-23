@@ -4,7 +4,7 @@ import course from "./course";
 
 function Courses() {
     return (
-        <div className="relative">
+        <div className="relative max-w-380 mx-auto">
             {/* Hero Section */}
             <div className="bg-black relative">
                 <img
@@ -40,7 +40,7 @@ function Courses() {
             </div>
 
             {/* Courses Grid */}
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8 p-8 bg-[#F9FAFF]">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8 p-8 bg-[#F9FAFF] lg:px-20 py-3">
                 {
                     course.map((item) => (
                         <>
@@ -65,7 +65,7 @@ function Courses() {
                                         {item.description}
                                     </p>
 
-                                    <div className="flex justify-between items-center mt-4">
+                                    <div className="flex lg:flex-row flex-col justify-between lg:items-center mt-4">
                                         <h1 className="text-lg font-semibold">
                                             ₹19,999{" "}
                                             <span className="text-red-500 line-through text-sm ml-2">

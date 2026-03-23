@@ -18,14 +18,14 @@ function Home() {
     };
 
     return (
-        <div className=''>
+        <div className='max-w-380 mx-auto'>
 
             {/* hero section start */}
-            <div className='flex flex-wrap justify-between items-center gap-10 max-w-[1280px] mx-auto'>
+            <div className='flex flex-wrap justify-center text-center lg:text-left lg:justify-between items-center gap-10 px-10 lg:px-20 py-3'>
 
                 {/* left content */}
                 <div className='space-y-5 pt-10'>
-                    <h1 className='text-5xl font-bold'>
+                    <h1 className='text-2xl lg:text-5xl font-bold'>
                         Build Real Skills with Live <br className='hidden md:block lg:block' />
                         Learning and Industry <br className='hidden md:block lg:block' />
                         Internships
@@ -38,21 +38,23 @@ function Home() {
                     </p>
 
                     {/* search box */}
-                    <div className="flex items-center bg-white rounded-lg mt-6 overflow-hidden shadow-lg w-full max-w-xl">
-                        <CiSearch className="text-2xl text-gray-400 ml-3" />
+                    <div className='flex justify-center lg:justify-start'>
+                        <div className="flex items-center bg-white rounded-lg mt-6 overflow-hidden shadow-lg w-full max-w-xl">
+                            <CiSearch className="text-2xl text-gray-400 ml-3" />
 
-                        <input
-                            type="text"
-                            placeholder="What skill do you want to learn today?"
-                            className="flex-1 px-3 py-3 outline-none text-black"
-                        />
+                            <input
+                                type="text"
+                                placeholder="What skill do you want to learn today?"
+                                className="flex-1 px-3 py-3 outline-none text-black"
+                            />
 
-                        <button className="bg-[#3746F2] text-white px-6 py-3 hover:bg-blue-700 transition">
-                            Search
-                        </button>
+                            <button className="bg-[#3746F2] text-white px-6 py-3 hover:bg-blue-700 transition">
+                                Search
+                            </button>
+                        </div>
                     </div>
                     {/* stats */}
-                    <div className='flex gap-10 pt-5'>
+                    <div className='flex justify-center lg:justify-start gap-10 pt-5'>
                         <div>
                             <h1 className='text-2xl font-medium'>10,000+</h1>
                             <span className='text-gray-500'>Courses Available</span>
@@ -77,7 +79,7 @@ function Home() {
             {/* hero section end */}
 
             {/* slider section */}
-            <div className='mt-10'>
+            <div className='pt-10  px-10 lg:px-20 py-3 '>
                 <h1 className='text-2xl font-bold text-center mb-10'>
                     Our Learners Work at Top Companies
                 </h1>
@@ -96,7 +98,7 @@ function Home() {
             </div>
             {/* slider section end */}
             {/* internship section */}
-            <div className='space-y-5'>
+            <div className='space-y-7 pt-10  px-10 lg:px-20 py-3 '>
                 <div className='flex justify-center pt-5'>
                     <button className='flex items-center gap-2 text-sm font-medium justify-center text-[#3746F2] border border-[#3746F2] rounded-full py-1 px-4 '>
                         <GiStarShuriken />Popular Internships
@@ -128,7 +130,7 @@ function Home() {
                                         {item.description}
                                     </p>
 
-                                    <div className="flex justify-between items-center mt-4">
+                                    <div className="flex lg:flex-row flex-col justify-between gap-5 lg:items-center mt-4">
                                         <h1 className="text-lg font-semibold">
                                             ₹19,999{" "}
                                             <span className="text-red-500 line-through text-sm ml-2">
@@ -148,30 +150,30 @@ function Home() {
             </div>
             {/* internship section end */}
             {/* Our Programs */}
-            <div className='pt-5'>
+            <div className='space-y-7 pt-10  px-10 lg:px-20 py-3 '>
                 <h1 className='text-2xl font-bold text-center'>Our Programs</h1>
                 <p className='text-lg text-center'>Choose from our comprehensive learning paths designed to accelerate your career.</p>
-            </div>
-            <div className='lg:grid-cols-3 grid md:grid-cols-2 sm:grid-cols-1 gap-10 p-10'>
-                <div className='border border-[#34343433] p-10 rounded-xl'>
-                    <img src="/job.svg" alt="" />
-                    <h1 className='text-2xl font-semibold'>Job-Oriented Courses</h1>
-                    <p className='text-base'>Learn industry-relevant skills from expert mentors through live and recorded classes.</p>
-                </div>
-                <div className='border border-[#34343433] p-10 rounded-xl'>
-                    <img src="/real.svg" alt="" />
-                    <h1 className='text-2xl font-semibold'>Real-World Internships</h1>
-                    <p className='text-base'>Gain practical experience with our partner companies and build your professional portfolio.</p>
-                </div>
-                <div className='border border-[#34343433] p-10 rounded-xl'>
-                    <img src="/offline.svg" alt="" />
-                    <h1 className='text-2xl font-semibold'>Offline Practical Training</h1>
-                    <p className='text-base'>Access our physical training center with hands-on labs and in-person doubt resolution.</p>
+                <div className='lg:grid-cols-3 grid md:grid-cols-2 sm:grid-cols-1 gap-10'>
+                    <div className='border border-[#34343433] p-10 rounded-xl'>
+                        <img src="/job.svg" alt="" />
+                        <h1 className='text-2xl font-semibold'>Job-Oriented Courses</h1>
+                        <p className='text-base'>Learn industry-relevant skills from expert mentors through live and recorded classes.</p>
+                    </div>
+                    <div className='border border-[#34343433] p-10 rounded-xl'>
+                        <img src="/real.svg" alt="" />
+                        <h1 className='text-2xl font-semibold'>Real-World Internships</h1>
+                        <p className='text-base'>Gain practical experience with our partner companies and build your professional portfolio.</p>
+                    </div>
+                    <div className='border border-[#34343433] p-10 rounded-xl'>
+                        <img src="/offline.svg" alt="" />
+                        <h1 className='text-2xl font-semibold'>Offline Practical Training</h1>
+                        <p className='text-base'>Access our physical training center with hands-on labs and in-person doubt resolution.</p>
+                    </div>
                 </div>
             </div>
             {/* Our Programs section end */}
             {/* Top Mentors */}
-            <div className='space-y-5'>
+            <div className='space-y-7 pt-10  px-10 lg:px-20 py-3 '>
                 <div className='flex justify-center pt-5'>
                     <button className='flex items-center gap-2 text-sm font-medium justify-center text-white bg-[#3746F2] rounded-full py-1 px-4 '>
                         <GiStarShuriken />Top Mentors
@@ -203,17 +205,17 @@ function Home() {
             </div>
             {/* Top Mentors section ends */}
             {/* Offline Training */}
-            <div>
+            <div className='space-y-7 pt-10  px-10 lg:px-20 py-3 '>
                 <div className='flex justify-center pt-5'>
                     <button className='flex items-center gap-2 text-sm font-medium justify-center text-white bg-[#3746F2] rounded-full py-1 px-4 '>
                         <GiStarShuriken />Offline Training
                     </button>
                 </div>
-                <div className='flex justify-around gap-10'>
-                    <div>
+                <div className='flex lg:flex-row items-center flex-col lg:items-start lg:justify-between gap-10'>
+                    <div className='lg:w-1/2'>
                         <img src="/offlinetraing.svg" alt="" />
                     </div>
-                    <div className='space-y-3'>
+                    <div className='space-y-3 lg:w-1/2'>
                         <h1 className='text-3xl font-bold'>Learn Offline at Our Training Center</h1>
                         <p>Experience hands-on learning in our state-of-the-art training facility<br className='hidden md:block lg:block' />with expert guidance and collaborative environment.</p>
                         <ul>
@@ -228,7 +230,7 @@ function Home() {
             </div>
             {/* Offline Training section ends */}
             {/* why choose us section */}
-            <div className='bg-[#4554FF] text-white text-center p-10 space-y-5'>
+            <div className='bg-[#4554FF] text-white text-center space-y-7 p-10 mt-10  px-10 lg:px-20 py-3 '>
                 <h1 className='text-3xl font-bold'>Why Choose Us</h1>
                 <p>We provide everything you need to launch your tech career successfully</p>
                 <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-10'>
@@ -256,55 +258,55 @@ function Home() {
             </div>
             {/* why choose us section end */}
             {/* your career path */}
-            <div className='text-center space-y-3'>
-                <h1 className='text-3xl font-bold'>Your Career Path</h1>
-                <p>A clear roadmap from learning to landing your dream job</p>
-            </div>
-            <div className='pl-40 pr-40'>
-                {/* 1st */}
-                <div className='flex gap-10'>
-                    <div className='bg-[#5260FF] flex items-center text-4xl font-bold text-white rounded-full justify-center w-20 h-20 p-7'>1</div>
-                    <div className='bg-[#EBF2FFCC] p-5 rounded-xl w-full'>
-                        <h1 className='text-2xl font-semibold flex justify-between items-center'>Enroll in Course<IoMdCheckmarkCircleOutline className='text-[#00A63E] mr-10' /></h1>
-                        <p className='text-lg text-[#000000CC]'>Choose your desired course and start your learning journey</p>
+            <div className='space-y-7 pt-10  px-10 lg:px-20 py-3 '>
+                <h1 className='text-center text-3xl font-bold'>Your Career Path</h1>
+                <p className='text-center'>A clear roadmap from learning to landing your dream job</p>
+                <div className='lg:pl-40 lg:pr-40'>
+                    {/* 1st */}
+                    <div className='flex lg:flex-row flex-col items-center gap-5 lg:gap-10'>
+                        <div className='bg-[#5260FF] flex items-center text-4xl font-bold text-white rounded-full justify-center w-20 h-20 p-7'>1</div>
+                        <div className='bg-[#EBF2FFCC] p-5 rounded-xl w-full'>
+                            <h1 className='text-2xl font-semibold flex justify-between items-center'>Enroll in Course<IoMdCheckmarkCircleOutline className='text-[#00A63E] mr-10' /></h1>
+                            <p className='text-lg text-[#000000CC]'>Choose your desired course and start your learning journey</p>
+                        </div>
                     </div>
-                </div>
-                {/* 2nd */}
-                <div className='flex gap-10 mt-10'>
-                    <div className='bg-[#5260FF] flex items-center text-4xl font-bold text-white rounded-full justify-center w-20 h-20 p-7'>2</div>
-                    <div className='bg-[#EBF2FFCC] p-5 rounded-xl w-full'>
-                        <h1 className='text-2xl font-semibold flex justify-between items-center'>Complete Live + Recorded Classes<IoMdCheckmarkCircleOutline className='text-[#00A63E] mr-10' /></h1>
-                        <p className='text-lg text-[#000000CC]'>Attend interactive live sessions and revisit recordings anytime</p>
+                    {/* 2nd */}
+                    <div className='flex lg:flex-row flex-col items-center gap-5 lg:gap-10 mt-10'>
+                        <div className='bg-[#5260FF] flex items-center text-4xl font-bold text-white rounded-full justify-center w-20 h-20 p-7'>2</div>
+                        <div className='bg-[#EBF2FFCC] p-5 rounded-xl w-full'>
+                            <h1 className='text-2xl font-semibold flex justify-between items-center'>Complete Live + Recorded Classes<IoMdCheckmarkCircleOutline className='text-[#00A63E] mr-10' /></h1>
+                            <p className='text-lg text-[#000000CC]'>Attend interactive live sessions and revisit recordings anytime</p>
+                        </div>
                     </div>
-                </div>
-                {/* 3rd */}
-                <div className='flex gap-10 mt-10'>
-                    <div className='bg-[#5260FF] flex items-center text-4xl font-bold text-white rounded-full justify-center w-20 h-20 p-7'>3</div>
-                    <div className='bg-[#EBF2FFCC] p-5 rounded-xl w-full'>
-                        <h1 className='text-2xl font-semibold flex justify-between items-center'>Work on Real Projects<IoMdCheckmarkCircleOutline className='text-[#00A63E] mr-10' /></h1>
-                        <p className='text-lg text-[#000000CC]'>Build practical projects that solve real-world problems</p>
+                    {/* 3rd */}
+                    <div className='flex lg:flex-row flex-col items-center gap-5 lg:gap-10 mt-10'>
+                        <div className='bg-[#5260FF] flex items-center text-4xl font-bold text-white rounded-full justify-center w-20 h-20 p-7'>3</div>
+                        <div className='bg-[#EBF2FFCC] p-5 rounded-xl w-full'>
+                            <h1 className='text-2xl font-semibold flex justify-between items-center'>Work on Real Projects<IoMdCheckmarkCircleOutline className='text-[#00A63E] mr-10' /></h1>
+                            <p className='text-lg text-[#000000CC]'>Build practical projects that solve real-world problems</p>
+                        </div>
                     </div>
-                </div>
-                {/* 4th */}
-                <div className='flex gap-10 mt-10'>
-                    <div className='bg-[#5260FF] flex items-center text-4xl font-bold text-white rounded-full justify-center w-20 h-20 p-7'>4</div>
-                    <div className='bg-[#EBF2FFCC] p-5 rounded-xl w-full'>
-                        <h1 className='text-2xl font-semibold flex justify-between items-center'>Internship Placement<IoMdCheckmarkCircleOutline className='text-[#00A63E] mr-10' /></h1>
-                        <p className='text-lg text-[#000000CC]'>Get placed in companies for hands-on work experience</p>
+                    {/* 4th */}
+                    <div className='flex lg:flex-row flex-col items-center gap-5 lg:gap-10 mt-10'>
+                        <div className='bg-[#5260FF] flex items-center text-4xl font-bold text-white rounded-full justify-center w-20 h-20 p-7'>4</div>
+                        <div className='bg-[#EBF2FFCC] p-5 rounded-xl w-full'>
+                            <h1 className='text-2xl font-semibold flex justify-between items-center'>Internship Placement<IoMdCheckmarkCircleOutline className='text-[#00A63E] mr-10' /></h1>
+                            <p className='text-lg text-[#000000CC]'>Get placed in companies for hands-on work experience</p>
+                        </div>
                     </div>
-                </div>
-                {/* 5th */}
-                <div className='flex gap-10 mt-10'>
-                    <div className='bg-[#5260FF] flex items-center text-4xl font-bold text-white rounded-full justify-center w-20 h-20 p-7'>5</div>
-                    <div className='bg-[#EBF2FFCC] p-5 rounded-xl w-full'>
-                        <h1 className='text-2xl font-semibold flex justify-between items-center'>Job Assistance<IoMdCheckmarkCircleOutline className='text-[#00A63E] mr-10' /></h1>
-                        <p className='text-lg text-[#000000CC]'>Receive support until you land your dream job</p>
+                    {/* 5th */}
+                    <div className='flex lg:flex-row flex-col items-center gap-5 lg:gap-10 mt-10'>
+                        <div className='bg-[#5260FF] flex items-center text-4xl font-bold text-white rounded-full justify-center w-20 h-20 p-7'>5</div>
+                        <div className='bg-[#EBF2FFCC] p-5 rounded-xl w-full'>
+                            <h1 className='text-2xl font-semibold flex justify-between items-center'>Job Assistance<IoMdCheckmarkCircleOutline className='text-[#00A63E] mr-10' /></h1>
+                            <p className='text-lg text-[#000000CC]'>Receive support until you land your dream job</p>
+                        </div>
                     </div>
                 </div>
             </div>
             {/* your career path section end */}
             {/* Testimonials */}
-            <div className='space-y-5'>
+            <div className='space-y-7 pt-10  px-10 lg:px-20 py-3 '>
                 <div className='flex justify-center pt-5'>
                     <button className='flex items-center gap-2 text-sm font-medium justify-center text-white bg-[#3746F2] rounded-full py-1 px-4 '>
                         <GiStarShuriken />Testimonials
@@ -312,16 +314,16 @@ function Home() {
                 </div>
                 <h1 className='text-3xl font-bold text-center'>What Our Students Say</h1>
                 <p className='text-center'>Hear from our students about their learning experience, internships, and career growth.</p>
-                <div className='flex justify-center gap-10'>
+                <div className='flex lg:flex-row flex-col justify-center gap-10'>
                     <div className='bg-[#EBF2FF] p-5 rounded-xl'>
                         <span></span>
-                        <p className='text-lg text-[#000000CC]'>I don't have words to thank this man, I'm really grateful to have <br className='hidden md:block lg:block' /> this channel and website in my daily routine. If you're a mere <br className='hidden md:block lg:block' /> beginner, then you can trust this guy and can put your time into <br className='hidden md:block lg:block' /> his content. I can assure you that it'll be worth it.</p>
+                        <p className='lg:text-lg  text-[#000000CC]'>I don't have words to thank this man, I'm really grateful to have <br className='hidden md:block lg:block' /> this channel and website in my daily routine. If you're a mere <br className='hidden md:block lg:block' /> beginner, then you can trust this guy and can put your time into <br className='hidden md:block lg:block' /> his content. I can assure you that it'll be worth it.</p>
                         <h1 className='text-lg'>Nisha Negi</h1>
                         <h2 className='text-lg text-[#00000099]'>Python Developer</h2>
                     </div>
                     <div className='bg-[#EBF2FF] p-5 rounded-xl'>
                         <span></span>
-                        <p className='text-lg text-[#000000CC]'>For everyone who wants to level up their #Coding and #Dev<br className='hidden md:block lg:block' /> skills - seriously, this channel is for you! Both basic and advanced <br className='hidden md:block lg:block' /> stacks are covered on this channel, and one can learn according <br className='hidden md:block lg:block' /> to their skill levels. And the icing on the cake is, most <br className='hidden md:block lg:block' /> of the content is available for free.</p>
+                        <p className='lg:text-lg text-[#000000CC]'>For everyone who wants to level up their #Coding and #Dev<br className='hidden md:block lg:block' /> skills - seriously, this channel is for you! Both basic and advanced <br className='hidden md:block lg:block' /> stacks are covered on this channel, and one can learn according <br className='hidden md:block lg:block' /> to their skill levels. And the icing on the cake is, most <br className='hidden md:block lg:block' /> of the content is available for free.</p>
                         <h1 className='text-lg'>Nisha Negi</h1>
                         <h2 className='text-lg text-[#00000099]'>Python Developer</h2>
                     </div>
@@ -329,7 +331,7 @@ function Home() {
             </div>
             {/* Testimonials end */}
             {/* image part */}
-            <div className="relative w-full h-screen">
+            <div className="relative w-full h-screen mt-10">
 
                 {/* Background Image */}
                 <img

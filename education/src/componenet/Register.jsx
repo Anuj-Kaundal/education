@@ -1,23 +1,24 @@
 import React from "react";
-
+import { useNavigate } from 'react-router-dom';
 function Register() {
+    const navigate = useNavigate();
     return (
         <div className="min-h-screen bg-gray-700 flex items-center justify-center">
-            <div className="bg-white rounded-xl shadow-lg w-[90%] max-w-5xl p-8 flex gap-10">
+            <div className="bg-white rounded-xl shadow-lg w-[90%] max-w-5xl p-8 flex lg:flex-row flex-col-reverse gap-10">
 
                 {/* LEFT SIDE */}
                 <div className="flex-1">
                     <h1 className="text-2xl font-bold mb-2">Create an Account</h1>
                     <p className="text-gray-600 mb-6">
                         Already have an account?{" "}
-                        <span className="text-indigo-600 cursor-pointer font-medium">
+                        <span className="text-indigo-600 cursor-pointer font-medium" onClick={() =>navigate('/login')}>
                             Log in
                         </span>
                     </p>
 
                     <form className="space-y-4">
                         {/* First + Last Name */}
-                        <div className="flex gap-4">
+                        <div className="flex  lg:flex-row flex-col gap-4">
                             <div className="flex flex-col w-full">
                                 <label className="text-sm text-gray-700 mb-1">
                                     First Name
@@ -51,7 +52,7 @@ function Register() {
                         </div>
 
                         {/* Password */}
-                        <div className="flex gap-4">
+                        <div className="flex  lg:flex-row flex-col gap-4">
                             <div className="flex flex-col w-full">
                                 <label className="text-sm text-gray-700 mb-1">
                                     Password
@@ -79,7 +80,7 @@ function Register() {
                         </p>
 
                         {/* Button */}
-                        <button className="bg-indigo-600 text-white px-6 py-2 rounded-sm hover:bg-indigo-700 transition">
+                        <button className="bg-indigo-600 w-full lg:w-60 text-white px-6 py-2 rounded-sm hover:bg-indigo-700 transition">
                             Create an account
                         </button>
                     </form>
@@ -87,10 +88,11 @@ function Register() {
 
                 {/* RIGHT SIDE */}
                 <div className="flex-1 flex flex-col items-center justify-center">
+                    <h1 className="text-2xl font-bold">Welcom To EDU</h1>
                     <img
                         src="/register.svg"
                         alt="register"
-                        className="w-[300px] mb-6"
+                        className="w-[300px] mb-6 w-full"
                     />
 
                     <div className="flex gap-4 text-sm text-gray-500">

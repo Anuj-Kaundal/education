@@ -5,10 +5,10 @@ import { MdOutlineMailOutline } from "react-icons/md";
 import { BsSend } from "react-icons/bs";
 function Contact() {
     return (
-        <div className='p-6 space-y-10'>
+        <div className='max-w-380 mx-auto space-y-10'>
 
             {/* Heading Section */}
-            <div className='flex flex-col md:flex-row justify-between gap-5'>
+            <div className='flex flex-col md:flex-row justify-between lg:text-start text-center gap-5 px-10 lg:px-20 py-3'>
                 <h1 className='text-4xl font-bold'>Contact Our Team</h1>
 
                 <p className='text-lg text-[#6E6E6E] max-w-xl'>
@@ -18,7 +18,7 @@ function Contact() {
             </div>
 
             {/* Main Section */}
-            <div className='flex flex-col md:flex-row gap-8'>
+            <div className='flex flex-col md:flex-row gap-8 px-10 lg:px-20 py-3'>
 
                 {/* Left Side */}
                 <div className='flex flex-col gap-5 w-full md:w-1/2'>

@@ -2,11 +2,11 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="bg-gray-100 text-gray-700 py-10">
+    <footer className="bg-gray-100 text-gray-700 py-10 ">
       <div className="max-w-6xl mx-auto px-6">
         
         {/* Grid Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center md:text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center md:text-left px-10 lg:px-20 py-3">
           
           {/* Pages */}
           <div>

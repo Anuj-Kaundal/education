@@ -2,9 +2,9 @@ import React from "react";
 import { GiStarShuriken } from "react-icons/gi";
 function About() {
   return (
-    <div className="font-sans text-gray-800">
+    <div className="font-sans text-gray-800 max-w-380 mx-auto">
       {/* ================= HERO ================= */}
-      <section className="text-center py-16 px-6">
+      <section className="text-center space-y-5 pt-10 px-10 lg:px-20 py-3">
         <div className="flex justify-center">
           <button className="bg-[#3746F2] text-white px-4 py-1 rounded-full mb-4 flex justify-center items-center gap-2">
             <GiStarShuriken />About
@@ -21,13 +21,13 @@ function About() {
       </section>
 
       {/* ================= MISSION ================= */}
-      <section className="grid md:grid-cols-2 gap-10 px-8 py-10">
+      <section className="flex lg:flex-row flex-col justify-around gap-10 px-10 lg:px-20 py-3">
         <img
           src="/mission.svg"
           alt="team"
           className="rounded-lg shadow-md"
         />
-        <div>
+        <div className="lg:text-start text-center">
           <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
           <p className="text-gray-600 mb-4">
             At EDUN, we believe that quality education should be accessible to
@@ -53,7 +53,7 @@ function About() {
       </section>
 
       {/* ================= FEATURES ================= */}
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 px-10 lg:px-20 py-3">
         <div className="flex flex-col justify-center items-center text-center bg-[#E9EBFF] p-5 rounded-lg">
           <img src="/expert-led.svg" alt="" height={50} width={50} />
           <h1 className="text-2xl font-bold">Expert-Led Courses</h1>
@@ -87,14 +87,14 @@ function About() {
       </div>
 
       {/* ================= VALUES ================= */}
-      <section className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center py-16 px-6">
+      <section className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center px-10 lg:px-20 py-3">
         <h3 className="text-2xl font-bold mb-4">Our Values</h3>
         <p className="max-w-xl mx-auto mb-10">
           We are committed to excellence, innovation, and inclusivity in
           everything we do.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 p-10 gap-6">
           <div className="flex flex-col justify-center items-center text-center">
             <img src="/excellence.svg" alt="Excellence" />
             <h4 className="font-semibold text-lg">Excellence</h4>

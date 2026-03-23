@@ -7,6 +7,7 @@ import Courses from "./componenet/Courses";
 import Internships from "./componenet/Internships";
 import Contact from "./componenet/Contact";
 import Register from "./componenet/Register";
+import Login from "./componenet/Login";
 
 const appRouter = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const appRouter = createBrowserRouter([
       {
         path:"/register",
         element:<Register/>
+      },
+      {
+        path:"/login",
+        element:<Login/>
       }
     ],
   },
