@@ -33,17 +33,17 @@ function Header() {
 
             {/* Main Header */}
             <div className='bg-[#F0F0F0]'>
-                <div className='flex justify-between items-center px-10 py-3 bg-[#F0F0F0]  max-w-380 mx-auto'>
+                <div className='flex justify-between items-center px-10 py-3 bg-[#F0F0F0]'>
 
                 {/* Logo (hidden on mobile) */}
-                <img src="/logo.svg" alt="logo" className='h-10 hidden lg:block' />
+                <img src="/logo.svg" alt="logo" className='' />
 
                 {/* Desktop Menu */}
                 <ul className='hidden lg:flex gap-10 text-base font-medium'>
                     <li onClick={() => navigate('/')} className='cursor-pointer'>Home</li>
                     <li onClick={() => navigate('/course')} className='cursor-pointer'>Courses</li>
                     <li onClick={() => navigate('/internship')} className='cursor-pointer'>Internships</li>
-                    <li className='cursor-pointer'>Success Stories</li>
+                    <li className='cursor-pointer' onClick={() => navigate('/blog')}>Blog</li>
                     <li onClick={() => navigate('/about')} className='cursor-pointer'>About</li>
                     <li onClick={() => navigate('/contact')} className='cursor-pointer'>Contact</li>
                 </ul>

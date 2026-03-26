@@ -8,6 +8,8 @@ import Internships from "./componenet/Internships";
 import Contact from "./componenet/Contact";
 import Register from "./componenet/Register";
 import Login from "./componenet/Login";
+import Blog from "./componenet/Blog";
+import Opencourse from "./componenet/Opencourse";
 
 const appRouter = createBrowserRouter([
   {
@@ -41,6 +43,14 @@ const appRouter = createBrowserRouter([
       {
         path:"/login",
         element:<Login/>
+      },
+      {
+        path:"/blog",
+        element:<Blog/>
+      },
+      {
+        path:"/opencourse/:id",
+        element:<Opencourse/>
       }
     ],
   },

@@ -1,8 +1,9 @@
 import React from "react";
 import { CiSearch } from "react-icons/ci";
 import course from "./course";
-
+import { useNavigate } from 'react-router-dom';
 function Courses() {
+    const navigate = useNavigate();
     return (
         <div className="relative max-w-380 mx-auto">
             {/* Hero Section */}
@@ -40,17 +41,17 @@ function Courses() {
             </div>
 
             {/* Courses Grid */}
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8 p-8 bg-[#F9FAFF] lg:px-20 py-3">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8 p-8 bg-[#F9FAFF] px-10 lg:px-20 py-3">
                 {
-                    course.map((item) => (
+                    course.map((course) => (
                         <>
                             <div
-                                key={item.id}
+                                key={course.id}
                                 className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300"
                             >
                                 <img
-                                    src={item.image}
-                                    alt={item.title}
+                                    src={course.image}
+                                    alt={course.title}
                                     className="w-full h-[200px] object-cover"
                                 />
 
@@ -59,10 +60,10 @@ function Courses() {
                                         4 Months
                                     </span>
 
-                                    <h2 className="text-xl font-bold mt-2">{item.title}</h2>
+                                    <h2 className="text-xl font-bold mt-2">{course.title}</h2>
 
                                     <p className="text-gray-500 mt-2 text-sm">
-                                        {item.description}
+                                        {course.description}
                                     </p>
 
                                     <div className="flex lg:flex-row flex-col justify-between lg:items-center mt-4">
@@ -73,7 +74,7 @@ function Courses() {
                                             </span>
                                         </h1>
 
-                                        <button className="border border-[#4F5DFF] text-[#4F5DFF] font-semibold rounded-md px-4 py-2 hover:bg-[#4F5DFF] hover:text-white transition">
+                                        <button className="border border-[#4F5DFF] cursor-pointer text-[#4F5DFF] font-semibold rounded-md px-4 py-2 hover:bg-[#4F5DFF] hover:text-white transition" onClick={() => navigate(`/opencourse/${course.id}`)}>
                                             View Details
                                         </button>
                                     </div>
