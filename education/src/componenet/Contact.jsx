@@ -3,7 +3,35 @@ import { IoLocation } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { BsSend } from "react-icons/bs";
+import { useState } from 'react';
+import axios from "axios";
 function Contact() {
+    const [form, setForm] = useState({
+        fullname: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+    const handleclick = (e) => {
+        const { name, value } = e.target;
+        setForm((e) => ({
+            ...e, [name]: value
+        }));
+    }
+    const sendmessage = async (e) => {
+        e.preventDefault();
+        try {
+            const send = await axios.post('http://localhost:2000/contact', {
+                fullname: form.fullname,
+                email: form.email,
+                subject: form.subject,
+                message: form.message
+            });
+            alert('message sent');
+        } catch (error) {
+            alert('something error')
+        }
+    }
     return (
         <div className='max-w-380 mx-auto space-y-10'>
 
@@ -88,6 +116,9 @@ function Contact() {
                         <input
                             type="text"
                             id="name"
+                            name='fullname'
+                            value={form.fullname}
+                            onChange={handleclick}
                             placeholder='Enter Your Name'
                             className='p-2 rounded-md border border-[#00000033] outline-none'
                         />
@@ -96,6 +127,9 @@ function Contact() {
                         <input
                             type="email"
                             id="email"
+                            name='email'
+                            value={form.email}
+                            onChange={handleclick}
                             placeholder='Enter Your Email'
                             className='p-2 rounded-md border border-[#00000033] outline-none'
                         />
@@ -104,6 +138,9 @@ function Contact() {
                         <input
                             type="text"
                             id="subject"
+                            name='subject'
+                            value={form.subject}
+                            onChange={handleclick}
                             placeholder='How can we help you ?'
                             className='p-2 rounded-md border border-[#00000033] outline-none'
                         />
@@ -111,12 +148,15 @@ function Contact() {
                         <label htmlFor="message">Message</label>
                         <textarea
                             id="message"
+                            name='message'
+                            value={form.message}
+                            onChange={handleclick}
                             placeholder='Enter your message'
                             className='p-2 rounded-md border border-[#00000033] outline-none'
                             rows="4"
                         ></textarea>
 
-                        <button className='bg-[#3746F2] text-white flex items-center justify-center text-xl font-semibold p-2  rounded-full gap-2 w-50 cursor-pointer'>
+                        <button className='bg-[#3746F2] text-white flex items-center justify-center text-xl font-semibold p-2  rounded-full gap-2 w-50 cursor-pointer' onClick={sendmessage}>
                             <BsSend />Send Message
                         </button>
                     </form>

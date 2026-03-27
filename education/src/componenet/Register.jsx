@@ -1,7 +1,47 @@
 import React from "react";
+import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import axios from "axios";
 function Register() {
     const navigate = useNavigate();
+    const [formData, setFormData] = useState({
+        firstname: '',
+        lastname: '',
+        email: '',
+        password: '',
+        confirmpassword: ''
+    });
+    const handleclick = (e) => {
+        const { name, value } = e.target;
+        console.log(name, value);
+        setFormData((e) => ({
+            ...e, [name]: value
+        }));
+    }
+    const register = async (e) => {
+        e.preventDefault();
+
+        if (formData.password === formData.confirmpassword) {
+            try {
+                const res = await axios.post('http://localhost:2000/register', {
+                    firstname: formData.firstname,
+                    lastname: formData.lastname,
+                    email: formData.email,
+                    password: formData.password,
+                    confirmpassword: formData.confirmpassword
+                });
+
+                console.log(res); // check response
+                alert('User registered successfully');
+
+            } catch (error) {
+                console.error(error);
+                alert('Something went wrong!');
+            }
+        } else {
+            alert('Password and confirm password are not same');
+        }
+    };
     return (
         <div className="min-h-screen bg-gray-700 flex items-center justify-center">
             <div className="bg-white rounded-xl shadow-lg w-[90%] max-w-5xl p-8 flex lg:flex-row flex-col-reverse gap-10">
@@ -11,7 +51,7 @@ function Register() {
                     <h1 className="text-2xl font-bold mb-2">Create an Account</h1>
                     <p className="text-gray-600 mb-6">
                         Already have an account?{" "}
-                        <span className="text-indigo-600 cursor-pointer font-medium" onClick={() =>navigate('/login')}>
+                        <span className="text-indigo-600 cursor-pointer font-medium" onClick={() => navigate('/login')}>
                             Log in
                         </span>
                     </p>
@@ -25,6 +65,9 @@ function Register() {
                                 </label>
                                 <input
                                     type="text"
+                                    name="firstname"
+                                    value={formData.firstname}
+                                    onChange={handleclick}
                                     className="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                                 />
                             </div>
@@ -35,6 +78,9 @@ function Register() {
                                 </label>
                                 <input
                                     type="text"
+                                    name="lastname"
+                                    value={formData.lastname}
+                                    onChange={handleclick}
                                     className="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                                 />
                             </div>
@@ -47,6 +93,9 @@ function Register() {
                             </label>
                             <input
                                 type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleclick}
                                 className="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                             />
                         </div>
@@ -59,6 +108,9 @@ function Register() {
                                 </label>
                                 <input
                                     type="password"
+                                    name="password"
+                                    value={formData.password}
+                                    onChange={handleclick}
                                     className="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                                 />
                             </div>
@@ -69,6 +121,9 @@ function Register() {
                                 </label>
                                 <input
                                     type="password"
+                                    name="confirmpassword"
+                                    value={formData.confirmpassword}
+                                    onChange={handleclick}
                                     className="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                                 />
                             </div>
@@ -80,7 +135,7 @@ function Register() {
                         </p>
 
                         {/* Button */}
-                        <button className="bg-indigo-600 w-full lg:w-60 text-white px-6 py-2 rounded-sm hover:bg-indigo-700 transition">
+                        <button className="bg-indigo-600 w-full lg:w-60 text-white px-6 py-2 rounded-sm hover:bg-indigo-700 transition" onClick={register}>
                             Create an account
                         </button>
                     </form>
