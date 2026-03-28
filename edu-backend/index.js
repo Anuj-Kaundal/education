@@ -11,10 +11,13 @@ const data  = require('./model/user');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-app.use(cors('http://localhost:5173/'));
+const dotenv = require('dotenv').config();
+app.use(cors(process.env.FRONTEND_URL));
 app.use(express.urlencoded({extented:true}));
 app.use(express.json())
 
+const PORT = process.env.PORT;
+console.log("PORT: ", process.env.PORT)
 app.get("/", (req,res)=>{
   res.send("api is up and running")
 })
@@ -94,6 +97,6 @@ app.post('/contact',async(req,res)=>{
     });
     console.log(adddata,'all done');
 })
-app.listen(2000,()=>{
+app.listen(PORT,()=>{
     console.log('backend is running successfully');
 });
