@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 function Courses() {
     const navigate = useNavigate();
     return (
-        <div className="relative max-w-380 mx-auto">
+        <div className="max-w-380 mx-auto">
             {/* Hero Section */}
             <div className="bg-black relative">
                 <img

@@ -1,9 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FcGoogle } from "react-icons/fc";
 import { SiFacebook } from "react-icons/si";
 import { useNavigate } from 'react-router-dom';
+import axios from "axios";
 function Login() {
     const navigate = useNavigate();
+    const [login,setLogin] = useState({
+        email:'',
+        password:''
+    });
+    const handleclick =(e) =>{
+        const {name,value} = e.target;
+        setLogin((e)=>({
+            ...e,[name]:value
+        }));
+    }
+    const loginform = async(e) =>{
+        e.preventDefault();
+        if(password !== ""){
+            const loginuser = await axios.post('http://localhost:2000/login',{
+                email:login.email,
+                password:login.password
+            });
+            console.log('user login');
+        }
+        else{
+            alert('user not found');
+        }
+    }
     return (
         <div>
             <div className='flex lg:flex-row flex-col-reverse p-10 justify-center items-center gap-20'>
@@ -26,9 +50,9 @@ function Login() {
                         <div className="flex-1 h-px bg-gray-300"></div>
                     </div>
                     <form action="" className='flex flex-col gap-5'>
-                        <input type="email" name="email" id="email" placeholder='E-mail' className='border border-gray-300 w-full rounded-sm px-2 p-2' />
-                        <input type="password" name="password" id="password" placeholder='Password'  className='border border-gray-300 w-full rounded-sm px-2 p-2' />
-                        <input type="submit" name="login" id="login" value="Login" className='bg-[#3746F2] text-white font-semibold w-full rounded-sm px-2 p-2' />
+                        <input type="email" name="email" value={login.email} onChange={handleclick} id="email" placeholder='E-mail' className='border border-gray-300 w-full rounded-sm px-2 p-2' />
+                        <input type="password" name="password" value={login.password} onChange={handleclick} id="password" placeholder='Password'  className='border border-gray-300 w-full rounded-sm px-2 p-2' />
+                        <button className='rounded-sm px-2 p-2 bg-blue-700 text-white font-semibold cursor-pointer' onClick={loginform}>Login</button>
                     </form>
                 </div>
                 <div>

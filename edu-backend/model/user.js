@@ -1,7 +1,11 @@
+
+
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/edu').then(()=>{
+
+mongoose.connect('mongodb+srv://kaundalanuj45_db_user:U32GSPTcSW2Ho5xR@cluster0.dqm4pyx.mongodb.net/edu').then(()=>{
     console.log('database is connected')
 });
+
 const createData = new mongoose.Schema({
     firstname:String,
     lastname:String,
@@ -13,3 +17,5 @@ const createData = new mongoose.Schema({
     message:String
 });
 module.exports = mongoose.model('user', createData);
+
+// mongodb+srv://kaundalanuj45_db_user:U32GSPTcSW2Ho5xR@cluster0.dqm4pyx.mongodb.net/

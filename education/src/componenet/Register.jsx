@@ -19,7 +19,7 @@ function Register() {
         }));
     }
     const register = async (e) => {
-        e.preventDefault();
+        // e.preventDefault();
 
         if (formData.password === formData.confirmpassword) {
             try {
@@ -30,7 +30,6 @@ function Register() {
                     password: formData.password,
                     confirmpassword: formData.confirmpassword
                 });
-
                 console.log(res); // check response
                 alert('User registered successfully');
 
@@ -135,7 +134,7 @@ function Register() {
                         </p>
 
                         {/* Button */}
-                        <button className="bg-indigo-600 w-full lg:w-60 text-white px-6 py-2 rounded-sm hover:bg-indigo-700 transition" onClick={register}>
+                        <button className="bg-indigo-600 w-full lg:w-60 text-white px-6 py-2 rounded-sm hover:bg-indigo-700 transition cursor-pointer" onClick={register}>
                             Create an account
                         </button>
                     </form>
