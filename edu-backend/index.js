@@ -14,6 +14,10 @@ const jwt = require('jsonwebtoken');
 app.use(cors('http://localhost:5173/'));
 app.use(express.urlencoded({extented:true}));
 app.use(express.json())
+
+app.get("/", (req,res)=>{
+  res.send("api is up and running")
+})
 // register user data
 app.post('/register',async (req,res)=>{
     const {firstname,lastname,email,password} = req.body;
