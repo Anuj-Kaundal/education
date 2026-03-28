@@ -3,7 +3,6 @@ import { MdOutlineMail, MdOutlinePhoneInTalk } from "react-icons/md";
 import { FaRegClock } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { IoMenu, IoClose } from "react-icons/io5";
-
 function Header() {
     const navigate = useNavigate();
     const [menu, setMenu] = useState(false);
