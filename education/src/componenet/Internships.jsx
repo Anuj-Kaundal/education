@@ -4,29 +4,38 @@ import Internship from "./internship";
 function Internships() {
     return (
         <div className='max-w-380 mx-auto'>
-            <div>
-                <div className='bg-black'>
-                    <img src="/internship-bg.svg" alt="" className='opacity-50 w-full object-cover relative' />
-                </div>
-                <div className='absolute space-y-3 flex flex-col justify-center top-1/2 left-1/3 text-white text-center'>
-                    <h1 className='text-4xl font-bold'>Start Your Internship Journey</h1>
-                    <p>Gain real-world experience, build projects, and work with industry <br className='hidden lg:block md:block' /> mentors.</p>
-                    {/* Search Box */}
-                    <div className="flex items-center bg-white rounded-lg mt-6 overflow-hidden shadow-lg w-full max-w-xl">
-                        <CiSearch className="text-2xl text-gray-400 ml-3" />
-
-                        <input
-                            type="text"
-                            placeholder="Search internships like Web Development, UI/UX, Python"
-                            className=" px-6 py-3 w-full outline-none text-black"
-                        />
-
-                        <button className="bg-[#3746F2] ml-5 text-white px-6 py-3 hover:bg-blue-700 transition">
-                            Search
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <div className="bg-black relative">
+                            <img
+                                src="/explorecourses.svg"
+                                alt="courses"
+                                className="w-full object-cover opacity-70"
+                            />
+            
+                            {/* Overlay Content */}
+                            <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
+                                <h1 className="text-4xl md:text-5xl font-bold">
+                                    Start Your Internship Journey
+                                </h1>
+                                <p className="mt-3 text-lg">
+                                    Gain real-world experience, build projects, and work with industry <br className='hidden lg:block md:block' /> mentors.
+                                </p>
+            
+                                {/* Search Box */}
+                                <div className="flex items-center bg-white rounded-lg mt-6 overflow-hidden shadow-lg w-full max-w-xl">
+                                    <CiSearch className="text-2xl text-gray-400 ml-3" />
+            
+                                    <input
+                                        type="text"
+                                        placeholder="Search internships like Web Development, UI/UX, Python"
+                                        className="flex-1 px-3 py-3 outline-none text-black"
+                                    />
+            
+                                    <button className="bg-[#3746F2] text-white px-6 py-3 hover:bg-blue-700 transition">
+                                        Search
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
             {/* internships */}
             <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 px-10 lg:px-20 py-3'>
                 {
