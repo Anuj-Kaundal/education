@@ -5,6 +5,43 @@ import Internship from "./internship";
 function Internships() {
     return (
         <div className='max-w-380 mx-auto'>
+            <div className='flex justify-center pt-20'>
+                <div className='bg-black rounded-xl relative'>
+                    <img src="/internship-hero.webp" alt="" height={500} width={900} className='opacity-50 rounded-xl' />
+                </div>
+                <div className='absolute flex flex-col gap-5 text-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center px-5'>
+                    <h1 className='text-4xl font-bold'>Want to kick start your Journey</h1>
+                    <p className='text-2xl font-bold text-blue-300'>You are on right track</p>
+                    <p className='text-md'>At Novanectar Services Pvt. Ltd. our internship programs are designed to provide hands-on experience and practical knowledge, preparing individuals for success in the professional world. We offer immersive opportunities to work on real projects, guided by industry experts, to help you develop the skills and expertise needed for your career growth.</p>
+                </div>
+            </div>
+            <div className="pl-20 pr-20 pt-10 flex justify-center">
+
+                <div className="bg-blue-100 rounded-3xl shadow-xl px-10 py-10 flex flex-col md:flex-row gap-8">
+
+                    {/* Card 1 */}
+                    <div className="bg-white border border-blue-300 rounded-2xl px-16 py-10 text-center shadow-sm hover:shadow-md transition">
+                        <div className="text-2xl mb-2">👥</div>
+                        <h1 className="text-3xl font-bold text-blue-600">10,000+</h1>
+                        <p className="text-gray-600 mt-2">Enrolled Candidates</p>
+                    </div>
+
+                    {/* Card 2 */}
+                    <div className="bg-white border border-blue-300 rounded-2xl px-16 py-10 text-center shadow-sm hover:shadow-md transition">
+                        <div className="text-2xl mb-2">🎓</div>
+                        <h1 className="text-3xl font-bold text-blue-600">6,000+</h1>
+                        <p className="text-gray-600 mt-2">Certified Candidates</p>
+                    </div>
+
+                    {/* Card 3 */}
+                    <div className="bg-white border border-blue-300 rounded-2xl px-16 py-10 text-center shadow-sm hover:shadow-md transition">
+                        <div className="text-2xl mb-2">🚀</div>
+                        <h1 className="text-3xl font-bold text-blue-600">40+</h1>
+                        <p className="text-gray-600 mt-2">Internship Domains</p>
+                    </div>
+
+                </div>
+            </div>
             <div className="text-center p-20 flex flex-col justify-center items-center gap-5">
                 <h1 className='text-3xl font-bold'>Internship Online</h1>
                 <p className='text-xl'>Explore our comprehensive online internship programs designed to boost your career</p>
@@ -34,12 +71,12 @@ function Internships() {
                 </div>
             </div>
             {/* internships */}
-            <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10 p-20'>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10 px-20'>
                 {
                     Internship.map((item) => (
                         <div
                             key={item.id}
-                            className='group relative min-h-[450px] bg-white border border-gray-200 rounded-3xl overflow-hidden cursor-pointer transition duration-500 hover:scale-[1.03] hover:shadow-2xl hover:bg-gray-200'
+                            className='group relative min-h-[450px] bg-white border border-gray-200 rounded-3xl overflow-hidden cursor-pointer transition duration-500 hover:scale-[1.03] hover:shadow-2xl hover:bg-gray-100'
                         >
 
                             {/* Image */}
