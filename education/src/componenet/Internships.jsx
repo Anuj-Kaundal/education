@@ -2,6 +2,8 @@ import React from 'react'
 import { CiSearch } from "react-icons/ci";
 import { CiFilter } from "react-icons/ci";
 import Internship from "./internship";
+import { IoLocation } from "react-icons/io5";
+import { MdCall } from "react-icons/md";
 function Internships() {
     return (
         <div className='max-w-380 mx-auto'>
@@ -40,6 +42,16 @@ function Internships() {
                         <p className="text-gray-600 mt-2">Internship Domains</p>
                     </div>
 
+                </div>
+            </div>
+            <div className="pl-30 pr-30 pt-10 flex justify-center">
+                <div className='bg-blue-100 rounded-3xl shadow-xl px-20 py-10 gap-8 text-center space-y-10'>
+                    <h1 className='text-3xl font-semibold'>Internship also Available in Offline Mode</h1>
+                    <div className='flex gap-20'>
+                        <h1 className='text-xl font-semibold flex gap-3 items-center'><IoLocation />Location: <span className='text-gray-600 text-md font-normal'>GMS Road Dehradun, Uttarakhand, India</span></h1>
+                        <h1 className='text-xl font-semibold flex gap-3 items-center'><MdCall />WhatsApp:<span className='text-gray-600 text-md font-normal'>8979891705</span></h1>
+                    </div>
+                    <button className='bg-blue-600 text-xl text-white font-semibold px-10 py-3 cursor-pointer rounded-xl'>Contact Us</button>
                 </div>
             </div>
             <div className="text-center p-20 flex flex-col justify-center items-center gap-5">
