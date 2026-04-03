@@ -23,7 +23,7 @@ function Register() {
 
         if (formData.password === formData.confirmpassword) {
             try {
-                const res = await axios.post('http://localhost:2000/register', {
+                const res = await axios.post(`${process.env.REACT_APP_API_URL}/register`, {
                     firstname: formData.firstname,
                     lastname: formData.lastname,
                     email: formData.email,

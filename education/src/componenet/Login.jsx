@@ -18,8 +18,8 @@ function Login() {
     }
     const loginform = async (e) => {
         e.preventDefault();
-        if (password !== "") {
-            const loginuser = await axios.post('http://localhost:2000/login', {
+        if (login.password !== "") {
+            const loginuser = await axios.post(`${process.env.REACT_APP_API_URL}/login`, {
                 email: login.email,
                 password: login.password
             });
