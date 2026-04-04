@@ -55,7 +55,7 @@ function Register() {
                         </span>
                     </p>
 
-                    <form className="space-y-4">
+                    <form className="space-y-4" method="post">
                         {/* First + Last Name */}
                         <div className="flex  lg:flex-row flex-col gap-4">
                             <div className="flex flex-col w-full">
