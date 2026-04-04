@@ -40,7 +40,7 @@ app.post('/register',async (req,res)=>{
       res.status(500).json({message:"Server error"},error);
     }
 });
-
+ // login api
 app.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -53,7 +53,7 @@ app.post('/login', async (req, res) => {
     }
 
     // 2. Check user exists
-    const user = await  data.findOne({ email });
+    const user = await data.findOne({ email });
 
     if (!user) {
       return res.status(404).json({
@@ -61,23 +61,28 @@ app.post('/login', async (req, res) => {
       });
     }
 
+    // ⚠️ DEBUG (optional - check once)
+    // console.log("Entered:", password);
+    // console.log("Stored:", user.password);
+
     // 3. Compare password
     const isMatch = await bcrypt.compare(password, user.password);
 
-    if (!isMatch) {
+    // 🔴 IMPORTANT FIX
+    if (isMatch === false) {
       return res.status(401).json({
         message: "Invalid password"
       });
     }
 
-    // 4. Generate JWT token
+    // 4. Generate token
     const token = jwt.sign(
       { email: user.email },
-      "secretkey123", // use env variable in real project
+      process.env.JWT_SECRET || "secretkey123",
       { expiresIn: "1h" }
     );
 
-    // 5. Send response
+    // 5. Success response
     return res.status(200).json({
       message: "Login successful",
       token
