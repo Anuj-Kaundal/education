@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
+// import env from dotenv
 function Register() {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
@@ -19,7 +20,7 @@ function Register() {
         }));
     }
     const register = async (e) => {
-        // e.preventDefault();
+        e.preventDefault();
 
         if (formData.password === formData.confirmpassword) {
             try {

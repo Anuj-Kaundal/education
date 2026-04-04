@@ -12,8 +12,9 @@ const cors = require('cors');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const dotenv = require('dotenv').config();
-app.use(cors(process.env.FRONTEND_URL));
-app.use(express.urlencoded({extented:true}));
+
+app.use(cors({ origin: process.env.FRONTEND_URL })); 
+app.use(express.urlencoded({extended:true}));
 app.use(express.json())
 
 const PORT = process.env.PORT;
@@ -23,7 +24,8 @@ app.get("/", (req,res)=>{
 })
 // register user data
 app.post('/register',async (req,res)=>{
-    const {firstname,lastname,email,password} = req.body;
+    try {
+      const {firstname,lastname,email,password} = req.body;
     // console.log(firstname,lastname,email,password);
     const hashpass =await bcrypt.hash(password, 2);
     const adddata = await data.create({
@@ -33,6 +35,10 @@ app.post('/register',async (req,res)=>{
         password:hashpass
     });
     console.log(adddata,'all done');
+    res.status(200).json({"message":"User register successfully"});
+    } catch (error) {
+      res.status(500).json({message:"Server error"},error);
+    }
 });
 
 app.post('/login', async (req, res) => {
@@ -95,7 +101,7 @@ app.post('/contact',async(req,res)=>{
         subject,
         message
     });
-    console.log(adddata,'all done');
+    console.log(contactus,'all done');
 })
 app.listen(PORT,()=>{
     console.log('backend is running successfully');
