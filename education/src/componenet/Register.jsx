@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
-// import env from dotenv
+// import VITE_API_URL from dotenv
 function Register() {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
@@ -19,12 +19,13 @@ function Register() {
             ...e, [name]: value
         }));
     }
+    console.log(import.meta.env.VITE_API_URL);
     const register = async (e) => {
         e.preventDefault();
 
         if (formData.password === formData.confirmpassword) {
             try {
-                const res = await axios.post(`${process.env.REACT_APP_API_URL}/register`, {
+                const res = await axios.post(`${import.meta.env.VITE_API_URL}/register`, {
                     firstname: formData.firstname,
                     lastname: formData.lastname,
                     email: formData.email,
