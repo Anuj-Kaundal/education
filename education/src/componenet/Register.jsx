@@ -14,8 +14,8 @@ function Register() {
     const handleclick = (e) => {
         const { name, value } = e.target;
         console.log(name, value);
-        setFormData((e) => ({
-            ...e, [name]: value
+        setFormData((prev) => ({
+            ...prev, [name]: value
         }));
     }
     console.log(import.meta.env.VITE_API_URL);
@@ -24,6 +24,7 @@ function Register() {
 
         if (formData.password === formData.confirmpassword) {
             try {
+                // /
                 const res = await axios.post(`${import.meta.env.VITE_API_URL}/register`, {
                     firstname: formData.firstname,
                     lastname: formData.lastname,
@@ -56,8 +57,7 @@ function Register() {
                         </span>
                     </p>
 
-                    <form className="space-y-4" method="post">
-                        {/* First + Last Name */}
+                    <form className="space-y-4" onSubmit={register}>                        {/* First + Last Name */}
                         <div className="flex  lg:flex-row flex-col gap-4">
                             <div className="flex flex-col w-full">
                                 <label className="text-sm text-gray-700 mb-1">
@@ -135,7 +135,7 @@ function Register() {
                         </p>
 
                         {/* Button */}
-                        <button className="bg-indigo-600 w-full lg:w-60 text-white px-6 py-2 rounded-sm hover:bg-indigo-700 transition cursor-pointer" onClick={register}>
+                        <button type="submit" className="bg-indigo-600 w-full lg:w-60 text-white px-6 py-2 rounded-sm hover:bg-indigo-700 transition cursor-pointer">
                             Create an account
                         </button>
                     </form>
