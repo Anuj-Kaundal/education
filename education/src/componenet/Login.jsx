@@ -16,23 +16,40 @@ function Login() {
             ...e, [name]: value
         }));
     }
-   const loginform = async (e) => {
-    e.preventDefault();
+    //    const loginform = async (e) => {
+    //     e.preventDefault();
 
-    try {
-        const res = await axios.post(`${process.env.REACT_APP_API_URL}/login`, {
-            email: login.email,
-            password: login.password
-        });
+    //     try {
+    //         const res = await axios.post(`${process.env.REACT_APP_API_URL}/login`, {
+    //             email: login.email,
+    //             password: login.password
+    //         });
 
-        alert(res.data.message);
-        setIsLoggedIn(true);
+    //         alert(res.data.message);
+    //         setIsLoggedIn(true);
 
-    } catch (error) {
-        alert(error.response?.data?.message || "Login failed");
+    //     } catch (error) {
+    //         alert(error.response?.data?.message || "Login failed");
+    //     }
+    // }
+    const UserLogin = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await axios.post(`${import.meta.env.VITE_API_URL}/login`, {
+                email: login.email,
+                password: login.password
+            });
+            console.log('login : ', res.data);
+            //  setItem , getItem , removeItem 
+            localStorage.setItem('token', res.data.token)
+            localStorage.setItem('user', JSON.stringify(res.data.user))
+
+
+
+        } catch (err) {
+            console.log('err : ', err.message)
+        }
     }
-}
-
     return (
         <div>
             {
