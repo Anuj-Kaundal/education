@@ -17,20 +17,20 @@ function Login() {
         }));
     }
     const loginform = async (e) => {
-        e.preventDefault();
-        if (login.password === password) {
-            const loginuser = await axios.post(`${process.env.REACT_APP_API_URL}/login`, {
-                email: login.email,
-                password: login.password
-            });
-            alert('User Login');
-            setIsLoggedIn(true); // ✅ login
-            // window.open('http://localhost:5173/');
-        }
-        else {
-            alert('user not found');
-        }
+    e.preventDefault();
+
+    try {
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}/login`, {
+            email: login.email,
+            password: login.password
+        });
+
+        alert(res.data.message);
+        setIsLoggedIn(true);
+    } catch (error) {
+        alert(error.response?.data?.message || "Login failed");
     }
+}
 
     return (
         <div>
