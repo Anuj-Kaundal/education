@@ -23,78 +23,78 @@ app.get("/", (req,res)=>{
   res.send("api is up and running")
 })
 // register user data
-app.post('/register',async (req,res)=>{
-    try {
-      const {firstname,lastname,email,password} = req.body;
-    // console.log(firstname,lastname,email,password);
-    const hashpass =await bcrypt.hash(password, 2);
-    const adddata = await data.create({
-        firstname,
-        lastname,
-        email,
-        password:hashpass
-    });
-    console.log(adddata,'all done');
-    res.status(200).json({"message":"User register successfully"});
-    } catch (error) {
-      res.status(500).json({message:"Server error"},error);
-    }
-});
- // login api
-app.post('/login', async (req, res) => {
+app.post("/register", async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // 1. Validation
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const user = await User.create({
+      email,
+      password: hashedPassword
+    });
+
+    res.json({
+      success: true,
+      message: "User registered",
+      user
+    });
+
+  } catch (error) {
+    res.json({
+      success: false,
+      message: "Error"
+    });
+  }
+});
+ // login api
+app.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    // 1. validation
     if (!email || !password) {
       return res.status(400).json({
+        success: false,
         message: "Email and password are required"
       });
     }
 
-    // 2. Check user exists
-    const user = await data.findOne({ email });
+    // 2. check user
+    const user = await User.findOne({ email });
 
     if (!user) {
       return res.status(404).json({
+        success: false,
         message: "User not found"
       });
     }
 
-    // ⚠️ DEBUG (optional - check once)
-    // console.log("Entered:", password);
-    // console.log("Stored:", user.password);
-
-    // 3. Compare password
+    // 3. password compare (IMPORTANT 🔥)
     const isMatch = await bcrypt.compare(password, user.password);
 
-    // 🔴 IMPORTANT FIX
-    if (isMatch === false) {
+    if (!isMatch) {
       return res.status(401).json({
+        success: false,
         message: "Invalid password"
       });
     }
 
-    // 4. Generate token
-    const token = jwt.sign(
-      { email: user.email },
-      process.env.JWT_SECRET || "secretkey123",
-      { expiresIn: "1h" }
-    );
-
-    // 5. Success response
+    // 4. success
     return res.status(200).json({
+      success: true,
       message: "Login successful",
-      token
+      user
     });
 
   } catch (error) {
     return res.status(500).json({
-      message: "Error in login API",
-      error: error.message
+      success: false,
+      message: "Server error"
     });
   }
 });
+✅ 2. Register (IMP
 
 // contact us
 app.post('/contact',async(req,res)=>{
