@@ -32,7 +32,7 @@ function Login() {
     //         alert(error.response?.data?.message || "Login failed");
     //     }
     // }
-    const UserLogin = async (e) => {
+    const loginform = async (e) => {
         e.preventDefault();
         try {
             const res = await axios.post(`${import.meta.env.VITE_API_URL}/login`, {
