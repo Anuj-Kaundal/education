@@ -34,6 +34,36 @@ function Login() {
     //     }
     // }
 
+    // const loginform = async (e) => {
+    //     e.preventDefault();
+
+    //     try {
+    //         const res = await axios.post(`${import.meta.env.VITE_API_URL}/login`, {
+    //             email: login.email,
+    //             password: login.password
+    //         });
+
+    //         console.log('login : ', res.data);
+    //         alert('Login successful ✅');
+    //         // Store data
+    //         localStorage.setItem('token', res.data.token);
+    //         localStorage.setItem('user', JSON.stringify(res.data.user));
+
+    //         // ✅ Success Alert
+    //         // alert('Login successful ✅');
+
+    //     } catch (err) {
+    //         console.log('err : ', err);
+
+    //         // ✅ Error handling
+    //         if (err.response && err.response.data.message) {
+    //             alert(err.response.data.message); // backend message
+    //         } else {
+    //             alert('Wrong password or something went wrong ❌');
+    //         }
+    //     }
+    // };
+
     const loginform = async (e) => {
         e.preventDefault();
 
@@ -45,25 +75,22 @@ function Login() {
 
             console.log('login : ', res.data);
 
-            // Store data
+            // ✅ Backend ka message show karo
+            window.alert(res.data.message);
+
             localStorage.setItem('token', res.data.token);
             localStorage.setItem('user', JSON.stringify(res.data.user));
-
-            // ✅ Success Alert
-            alert('Login successful ✅');
 
         } catch (err) {
             console.log('err : ', err);
 
-            // ✅ Error handling
-            if (err.response && err.response.data.message) {
-                alert(err.response.data.message); // backend message
+            if (err.response?.data?.message) {
+                window.alert(err.response.data.message);
             } else {
-                alert('Wrong password or something went wrong ❌');
+                window.alert('Something went wrong ❌');
             }
         }
     };
-    
     return (
         <div>
             <div className='flex lg:flex-row flex-col-reverse p-10 justify-center items-center gap-20'>
@@ -88,7 +115,7 @@ function Login() {
                     <form action="" className='flex flex-col gap-5'>
                         <input type="email" name="email" value={login.email} onChange={handleclick} id="email" placeholder='E-mail' className='border border-gray-300 w-full rounded-sm px-2 p-2' />
                         <input type="password" name="password" value={login.password} onChange={handleclick} id="password" placeholder='Password' className='border border-gray-300 w-full rounded-sm px-2 p-2' />
-                        <button className='rounded-sm px-2 p-2 bg-blue-700 text-white font-semibold cursor-pointer' onClick={loginform}>Login</button>
+                        <button type='submit' className='rounded-sm px-2 p-2 bg-blue-700 text-white font-semibold cursor-pointer' onClick={loginform}>Login</button>
                     </form>
                 </div>
                 <div>
