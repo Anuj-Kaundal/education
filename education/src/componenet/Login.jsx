@@ -15,55 +15,6 @@ function Login() {
             ...e, [name]: value
         }));
     }
-    // const loginform = async (e) => {
-    //     e.preventDefault();
-    //     try {
-    //         const res = await axios.post(`${import.meta.env.VITE_API_URL}/login`, {
-    //             email: login.email,
-    //             password: login.password
-    //         });
-    //         console.log('login : ', res.data);
-    //         //  setItem , getItem , removeItem 
-    //         localStorage.setItem('token', res.data.token)
-    //         localStorage.setItem('user', JSON.stringify(res.data.user))
-
-
-
-    //     } catch (err) {
-    //         console.log('err : ', err.message)
-    //     }
-    // }
-
-    // const loginform = async (e) => {
-    //     e.preventDefault();
-
-    //     try {
-    //         const res = await axios.post(`${import.meta.env.VITE_API_URL}/login`, {
-    //             email: login.email,
-    //             password: login.password
-    //         });
-
-    //         console.log('login : ', res.data);
-    //         alert('Login successful ✅');
-    //         // Store data
-    //         localStorage.setItem('token', res.data.token);
-    //         localStorage.setItem('user', JSON.stringify(res.data.user));
-
-    //         // ✅ Success Alert
-    //         // alert('Login successful ✅');
-
-    //     } catch (err) {
-    //         console.log('err : ', err);
-
-    //         // ✅ Error handling
-    //         if (err.response && err.response.data.message) {
-    //             alert(err.response.data.message); // backend message
-    //         } else {
-    //             alert('Wrong password or something went wrong ❌');
-    //         }
-    //     }
-    // };
-
     const loginform = async (e) => {
         e.preventDefault();
 
