@@ -16,7 +16,7 @@ function Login() {
             ...e, [name]: value
         }));
     }
-    const loginform = async (e) => {
+   const loginform = async (e) => {
     e.preventDefault();
 
     try {
@@ -27,6 +27,7 @@ function Login() {
 
         alert(res.data.message);
         setIsLoggedIn(true);
+
     } catch (error) {
         alert(error.response?.data?.message || "Login failed");
     }
