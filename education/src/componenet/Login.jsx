@@ -18,33 +18,19 @@ function Login() {
     }
     const loginform = async (e) => {
         e.preventDefault();
-
-        try {
-            const res = await axios.post(
-                `${process.env.REACT_APP_API_URL}/login`,
-                {
-                    email: login.email,
-                    password: login.password
-                }
-            );
-
-            console.log("Response:", res.data);
-
-            // ✅ backend response check karo
-            if (res.data.success) {
-                alert("Login Successful ✅");
-                setIsLoggedIn(true);
-            } else {
-                alert(res.data.message || "Invalid credentials ❌");
-                setIsLoggedIn(false);
-            }
-
-        } catch (error) {
-            console.log(error);
-            alert("Server error ❌");
-            setIsLoggedIn(false);
+        if (login.password !== "") {
+            const loginuser = await axios.post(`${process.env.REACT_APP_API_URL}/login`, {
+                email: login.email,
+                password: login.password
+            });
+            alert('User Login');
+            setIsLoggedIn(true); // ✅ login
+            // window.open('http://localhost:5173/');
         }
-    };
+        else {
+            alert('user not found');
+        }
+    }
 
     return (
         <div>
